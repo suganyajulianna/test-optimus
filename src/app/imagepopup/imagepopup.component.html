@@ -1,0 +1,7 @@
+<div class="popup-container">
+    <img [src]="imageUrl" alt="Popup Image" class="popup-image" *ngIf="imageUrl; else noImage" />
+    <ng-template #noImage>
+      <p class="no-image-text">No image available</p>
+    </ng-template>
+  </div>
+  

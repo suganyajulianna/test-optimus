@@ -1,0 +1,104 @@
+<nav class="navbar custom-navbar">
+  <a class="navbar-brand" href="#">Safety Management System</a>
+
+  <!-- Right-aligned container for dropdown and notification -->
+  <div class="ml-auto d-flex align-items-center">
+    
+    <!-- Dropdown -->
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+        Location
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="#">Chennai</a></li>
+        <li><a class="dropdown-item" href="#">Trichy</a></li>
+        <li><a class="dropdown-item" href="#">Madurai</a></li>
+      </ul>
+    </div>
+
+    <!-- Notification bell icon -->
+<button class="btn btn-light position-relative ml-3" [routerLink]="['/scenario']">
+  <i class="fa fa-bell"></i>
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    11
+    <span class="visually-hidden">unread messages</span>
+  </span>
+</button>
+</div>
+</nav>
+
+
+<!-- 3D Image Placeholder -->
+<div class="imageContainer">
+  <img src="https://img.cadnav.com/allimg/210922/cadnav-210922101333.jpeg" alt="3D Image" class="image" />
+</div>
+  <!-- <div id="notificationPanel" class="notification-panel">
+      <h3 class="panel-title">Notifications</h3>
+      <ul class="notifications-list">
+        <li *ngFor="let notification of notifications" class="notification-item card">
+          <div class="icon">
+            <i [class]="'fa ' + notification.icon"></i>
+          </div>
+          <div class="content">
+            <span class="title">{{ notification.title }}</span>
+            <span class="message">{{ notification.message }}</span>
+            <span class="time">{{ notification.time }}</span>
+          </div>
+        </li>
+      </ul>
+    </div> -->
+    <div class="notification-container">
+      <div class="notification-item" *ngFor="let notification of notifications; let i = index">
+        <div class="notification-content">
+          <i class="notification-icon">ℹ️</i>
+          {{ notification }}
+        </div>
+        <button class="close-btn" (click)="closeNotification(i)">×</button>
+      </div>
+    </div>
+    
+    <button (click)="triggerNotifications()">Show Notification</button>
+    
+    
+
+
+
+
+
+<!-- Notification panel
+<div id="notificationPanel" class="notification-panel">
+  <h3 class="panel-title">Notifications</h3>
+  <ul class="notifications-list">
+    <li class="notification-item card">
+      <div class="icon">
+        <i class="fa fa-wrench"></i>
+      </div>
+      <div class="content">
+        <span class="title">Maintenance request update</span>
+        <span class="message">The maintenance request for Apartment 301 has been completed.</span>
+        <span class="time">5h ago</span>
+      </div>
+    </li>
+    <li class="notification-item card">
+      <div class="icon">
+        <i class="fa fa-money-bill"></i>
+      </div>
+      <div class="content">
+        <span class="title">Rent Payment Confirmation</span>
+        <span class="message">Payment of $1,200 for Apartment 102 has been processed successfully.</span>
+        <span class="time">7h ago</span>
+      </div>
+    </li>
+    <li class="notification-item card">
+      <div class="icon">
+        <i class="fa fa-clock"></i>
+      </div>
+      <div class="content">
+        <span class="title">Lease Renewal Reminder</span>
+        <span class="message">The lease for Apartment 308 is set to expire on October 15, 2023.</span>
+        <span class="time">7h ago</span>
+      </div>
+    </li>
+  </ul>
+</div>
+ -->
